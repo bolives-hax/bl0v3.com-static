@@ -6,8 +6,7 @@ compile_sass = true
 build_search_index = true
 
 
-#title = "blog"
-#description = "bl0v3's blog"
+description = "bl0v3's blog"
 
 
 # The site theme to use.
@@ -77,6 +76,7 @@ show_feed = true
 # See https://www.getzola.org/documentation/content/linking/#internal-links
 links = [
   {url = "@/Blog/_index.md", name = "Blog"},
+  {url = "@/_index.md", name = "/"},
   #{url = "@/demo/index.md", name = "Demo"},
   #{url = "https://codeberg.org/daudix/duckquill", name = "Repo"},
 ]
