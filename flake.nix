@@ -27,6 +27,7 @@
           src = website-src;
           unpackPhase = ''
             cp -r --no-preserve=mode $src source
+            mkdir -p source/themes/
             cp -r --no-preserve=mode ${duckquill-theme} source/themes/duckquill
             cd source
             echo -e "# The URL the site will be built for\nbase_url = \"${url}\"\n" | cat - _config.toml > config.toml
