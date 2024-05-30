@@ -1,6 +1,3 @@
-# The URL the site will be built for
-base_url = "https://bl0v3.com"
-
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 

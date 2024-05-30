@@ -21,36 +21,45 @@
         pkgs = import nixpkgs {
           inherit system;
         };
+
+        mkSite = {name ? "bl0v3-website", url}: with pkgs; pkgs.stdenv.mkDerivation {
+          inherit name;
+          src = website-src;
+          unpackPhase = ''
+            cp -r --no-preserve=mode $src source
+            cp -r --no-preserve=mode ${duckquill-theme} source/themes/duckquill
+            cd source
+            echo -e "# The URL the site will be built for\nbase_url = \"${url}\"" | cat - config.toml
+          '';
+          buildPhase = ''
+            ${pkgs.zola}/bin/zola build
+          '';
+          installPhase = ''
+            cp -r public $out
+          '';
+        };
       in {
-        packages.default = with pkgs; pkgs.stdenv.mkDerivation {
-            name = "bl0v3-website";
-            src = website-src;
-            #phases = [ "buildPhase" "installPhase" ];
-            #sourceRoot = "${src}/bl0v3.com";
-            # TODO remove the need for these chmods
-            unpackPhase = ''
-              cp -r --no-preserve=mode $src source
-              cp -r --no-preserve=mode ${duckquill-theme} source/themes/duckquill
-              cd source
-            '';
-            buildPhase = ''
-              ${pkgs.zola}/bin/zola build
-            '';
-            installPhase = ''
-              cp -r public $out
-            '';
+        packages = rec {
+          default = github;
+          github =  mkSite {
+            name =" bl0v3-website-github";
+            url ="https://bolives-hax.github.io";
           };
+          bl0v3_dot_com = mkSite {
+            name =" bl0v3-website-bl0v3_dot_com";
+            url ="https://bl0v3.com";
+          };
+        };
 
         # type nix develop .#
         # and then in the shel you can use
         # zola serve OR zola build
+        # NOTE that --base-url / --interface 0.0.0.0 --port $PORT are
+        # needed for zola serve to work correctly 
         devShells.default = with pkgs; mkShell {
           buildInputs = [
             zola
           ];
-
-          #shellHook = ''
-          #'';
         };
       }
     );
