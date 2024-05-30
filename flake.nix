@@ -42,12 +42,12 @@
         packages = rec {
           default = github;
           github =  mkSite {
-            name =" bl0v3-website-github";
-            url ="https://bolives-hax.github.io";
+            name = "bl0v3-website-github";
+            url = "https://bolives-hax.github.io";
           };
           bl0v3_dot_com = mkSite {
-            name =" bl0v3-website-bl0v3_dot_com";
-            url ="https://bl0v3.com";
+            name = "bl0v3-website-bl0v3_dot_com";
+            url = "https://bl0v3.com";
           };
         };
 
