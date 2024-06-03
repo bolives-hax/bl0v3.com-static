@@ -14,11 +14,17 @@ I learned some new things about apl while writing this)
 
 trigger  = """
 APL IS NOT MEANT TO BE USED FOR SUCH TASKS!!! It simply is not the language one should choose to perform such a task. With that being said. Keep in mind that as this was just a hobby weekend project there are various flaws and shortcomings to watch out for
-- Performance isn't too good as until I fix some things also multi-threaded execution contexts aren't supported yet
+- Performance isn't too good as until I fix some things also multi-threaded execution contexts ~~aren't supported yet~~ are supported now
 - Ray tracing / Ray marching is inherently slow thus such algorithms rarely used for real-time graphics but
 rather, for pretty much all CGI you'd see in your average movie made in the more recent years
 - There may be some flaws as I haven't gotten the chance to take thaaaaat good of a look at APL specifically dyalog APL yet
 - This project essentially served to gain a better understanding of the language after all
+"""
+
+archive = """
+**NOTE**: Since [this commit/relase](https://github.com/bolives-hax/apl-raymarcher/commit/ddde091fa2cb4c635cc6a1e39a2f4f6183852317)
+multithreading is now officially supported. Though this page was written before I added support for that
+so keep that in mind when reading this page.
 """
 +++
 
@@ -32,6 +38,9 @@ rather, for pretty much all CGI you'd see in your average movie made in the more
 
 As for now I only provide build expression through nix which
 alongside the source-code are located at [this github repository](https://github.com/bolives-hax/apl-raymarcher).
+
+**NOTE**: Since [this commit/relase](https://github.com/bolives-hax/apl-raymarcher/commit/ddde091fa2cb4c635cc6a1e39a2f4f6183852317)
+multithreading is now officially supported. Though this page was written before I added support for that
 
 ## running it yourself
 
@@ -60,7 +69,7 @@ such as [the Möller–Trumbore intersection algorithm](https://en.wikipedia.org
 
 For example the SDF for a sphere would look something like this (in GLSL)
 ```glsl
-flaot sphereSDF(vec3 p, float radius) {
+float sphereSDF(vec3 p, float radius) {
     # length() gets the length of its arguments vector
     length(p) - radius;
 }

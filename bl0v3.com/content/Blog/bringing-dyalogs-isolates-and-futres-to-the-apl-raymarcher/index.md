@@ -120,4 +120,18 @@ references within the compiled software.
 
 # actual implementation 
 
-(TODO)
+Since [this commit](https://github.com/bolives-hax/apl-raymarcher/commit/ddde091fa2cb4c635cc6a1e39a2f4f6183852317) multithreading is now availible
+
+
+
+While at the time of writing this the amount of theads is hardcoded via `threads←4` in flake.nix but you are free to changing
+the amount of threads by either altering the `raymarcher.apl` file or the flake.nix file accordingly (see flake.nix to see what variables need to be applied).
+Thus rendering with much more than 4 threads is totally feasible and it does seem to be able to truly utilize all resources given to it perfectly fine.
+
+See (rendering in 4K):
+
+{{ image(url="https://github.com/bolives-hax/apl-raymarcher/blob/master/multithread-showcase.jpg?raw=true") }}
+
+
+
+(TODO actually explain how this was pulled off. Until then check `raymarcher.apl`'s comments that were added in the commit linked above
