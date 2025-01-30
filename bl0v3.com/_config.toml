@@ -7,7 +7,10 @@ build_search_index = true
 
 
 description = "bl0v3's blog"
+# keep this title, or u get build errors:
+title = ""
 
+#base_url = "/"
 
 # The site theme to use.
 theme = "duckquill"
@@ -17,18 +20,21 @@ taxonomies = [
 ]
 
 
+#
+default_language = "en"
 
-# When set to "true", the generated HTML files are minified.
-minify_html = true
+[languages.en]
+
+#
 
 
 # When set to "true", a feed is automatically generated.
-generate_feed = true
+generate_feeds = true
 
 # The filename to use for the feed. Used as the template filename, too.
 # Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
 # There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
-feed_filename = "atom.xml"
+feed_filenames = [ "atom.xml" ]
 
 #####
 
@@ -49,6 +55,10 @@ smart_punctuation = true
 
 
 [extra]
+
+# When set to "true", the generated HTML files are minified.
+minify_html = true
+
 # Sets theme and browser theme color.
 # See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
 primary_color = "#ff7800"
