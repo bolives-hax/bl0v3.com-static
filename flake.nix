@@ -6,7 +6,7 @@
     flake-utils.url  = "github:numtide/flake-utils";
     website-src = {
       flake = false;
-      url = "path:bl0v3.com";
+      url = "path:./bl0v3.com";
     };
     duckquill-theme = {
       type = "git";
