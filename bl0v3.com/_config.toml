@@ -1,6 +1,5 @@
 #base_url = "https://bl0v3.com"
 
-base_url = "https://127.0.0.1"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
