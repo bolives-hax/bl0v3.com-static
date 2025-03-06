@@ -1,4 +1,6 @@
 #base_url = "https://bl0v3.com"
+
+base_url = "https://127.0.0.1"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -15,15 +17,10 @@ title = ""
 # The site theme to use.
 theme = "duckquill"
 
-taxonomies = [
-  {name = "tags", feed = true},
-]
-
-
 #
-default_language = "en"
+#default_language = "en"
 
-[languages.en]
+#[languages.en]
 
 #
 
@@ -34,31 +31,132 @@ generate_feeds = true
 # The filename to use for the feed. Used as the template filename, too.
 # Defaults to "atom.xml", which has a built-in template that renders an Atom 1.0 feed.
 # There is also a built-in template "rss.xml" that renders an RSS 2.0 feed.
-feed_filenames = [ "atom.xml" ]
+#feed_filenames = [ "atom.xml" ]
 
 #####
 
 
+default_language = "en"
+
+taxonomies = [{ name = "tags", feed = true }]
+
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
-#
 highlight_theme = "css"
 highlight_themes_css = [
-  { theme = "solarized-dark", filename = "syntax-theme-dark.css" },
-  { theme = "solarized-light", filename = "syntax-theme-light.css" },
+	{ theme = "solarized-dark", filename = "syntax-theme-dark.css" },
+	{ theme = "solarized-light", filename = "syntax-theme-light.css" }
 ]
 smart_punctuation = true
-
-
+bottom_footnotes = true
 
 
 [extra]
 
+
+
+# CUSTOM BACKGROUND
+#OOOOOOOOOOOOOOOOOOOOOOOOOOLDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+# ./sass/custom-backgrounds.scss is conver to custom-backgrounds.css:
+# styles = [
+#   "custom-backgrounds.css"
+# ]
+
+
+# Which theme should be used by default (light/dark).
+#
+#default_theme = "light"
+#
+# Sets theme and browser theme color.
+# See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
+accent_color = "#ff7800"
+# Ditto but for the dark theme.
+# If not set regular variant will be used.
+accent_color_dark = "#ffa348"
+# Whether to use fonts bundled with Duckquill instead of system ones.
+# Keep in mind that it also changes the style of headings.
+#
+# bundled_fonts = true
+#
+# Use emoji as a favicon.
+# Only one emoji is being rendered, everything else is truncated.
+#
+# emoji_favicon = "🦆🪶"
+#
+# URL to website's issue tracker
+issues_url = "https://codeberg.org/daudix/duckquill/issues"
+# URL to website's source code
+source_url = "https://codeberg.org/daudix/duckquill"
+# Additional CSS styles; expects them to be in the "./static/" directory.
+# If you are using Sass it will be generated there automatically.
+#
+# styles = [
+#   "YOUR_STYLE.css",
+#   "ALSO_YOUR_STYLE.css"
+# ]
+#
+# Additional JavaScript scripts; expects them to be in the "./static/" directory.
+#
+# scripts = [
+#   "YOUR_SCRIPT.js",
+#   "ALSO_YOUR_SCRIPT.js"
+# ]
+#
+# Whether to show "copy code" button on all code blocks
+# that have the language set.
+# See https://www.getzola.org/documentation/content/syntax-highlighting/
+
+# Whether to show estimated read time in posts.
+show_reading_time = true
+#
+# Whether to show a share button in article's quick actions.
+# Uses https://shareopenly.org.
+show_share_button = true
+# Whether to show the backlinks button for linked articles in the article's quick actions
+show_backlinks = true
+# Whether to enable the KaTeX library for rendering LaTeX.
+# Note: This will make your page significantly heavier.
+# Instead, consider enabling it per page/section.
+# katex = true
+#
+# Whether to render table of contents on all pages.
+# Will not be rendered if page doesn't have any headings.
+# Can be set per page/section.
+# toc = true
+#
+# Whether to render inline table of contents at the top of all pages,
+# in addition to floating quick navigation buttons.
+# Can be set per page/section.
+# toc_inline = true
+#
+# Whether to use numbered (ordered) list for table of contents.
+# Can be set per page/section.
+# toc_ordered = true
+#
+# Custom separator used across the theme.
+# separator = "•"
+# Custom separator used in title tag and posts metadata.
+# title_separator = "-"
+#
+# Whether to use Content Security Policy.
+# Keep in mind that although this can potentially increase security,
+# it can break some stuff, in which case you will need to set custom policy.
+csp = [
+	{ directive = "font-src", domains = ["'self'"] },
+	{ directive = "img-src", domains = ["'self'", "https:", "data:"] },
+	{ directive = "media-src", domains = ["'self'", "https:"] },
+	{ directive = "script-src", domains = ["'self'"] },
+	{ directive = "style-src", domains = ["'self'", "'unsafe-inline'"] },
+	{ directive = "frame-src", domains = ["https://player.vimeo.com", "https://www.youtube-nocookie.com", "https://toot.community"] },
+	{ directive = "connect-src", domains = ["https://toot.community"] },
+	{ directive = "base-uri", domains = ["'none'"] },
+	{ directive = "form-action", domains = ["'none'"] }
+]
+
+
 # When set to "true", the generated HTML files are minified.
 minify_html = true
-
+#theme-color = "white"
 # Sets theme and browser theme color.
 # See https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
 primary_color = "#ff7800"
