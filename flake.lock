@@ -77,12 +77,12 @@
       "flake": false,
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-5Nf3t0dzL0CbC9lO852dr9ruZB6ZSq+QZnK16daUDgA=",
-        "path": "bl0v3.com",
+        "narHash": "sha256-AJ4Hh0/pEKATa8JSXKuWmAY7swjKM1NQX06iSkVox0k=",
+        "path": "./bl0v3.com",
         "type": "path"
       },
       "original": {
-        "path": "bl0v3.com",
+        "path": "./bl0v3.com",
         "type": "path"
       }
     }
