@@ -102,7 +102,7 @@ Well where do I start ... I'm not even quite sure anymore what motivated me to g
 these 3 points:
 
 - a mainframe somehow managed to appear in front of me ... <small>(I guess that doesn't happen too often)</small>
-{{ image(url="https://files.catbox.moe/0tdzho.jpg", alt="me with a mainframe", no_hover=true) }}
+{{ image(url="https://files.catbox.moe/7qze3s.jpg", alt="me with a mainframe", no_hover=true) }}
 
 - I wanted to add a platform to Nix(OS) and see how things work *"from the ground up"* <small>(but nearly everything was already added even risc-v)</small>
 
